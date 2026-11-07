@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barmco products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #000000;
+      --card-bg: #111111;
+      --text-main: #ffffff;
+      --accent-green: #2ecc71;
+      --accent-green-bright: #27ae60;
+      --border-color: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Comfortaa', cursive, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      overflow-x: hidden;
+    }
+
+    /* Background Interactive Grid/Glow Effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 60vh;
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .brand-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .brand-title span {
+      color: var(--accent-green);
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    main {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Big Bold Design Idea: Giant Problem Solver Cards */
+    .section-card {
+      background-color: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 24px;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-green);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--accent-green);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .quote-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-green);
+    }
+
+    .product-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      .brand-title {
+        font-size: 2.2rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .section-card {
+        padding: 1.5rem;
+      }
+
+      .quote-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="brand-title">Barmco <span>products</span></h1>
+    <p class="tagline">A company that builds new products for real life problems. Built for everyone.</p>
+  </header>
+
+  <main>
+    <section class="section-card">
+      <h2 class="section-title">Why I Do This</h2>
+      <p class="quote-text">"I want to help people have products that can solve real life issues"</p>
+    </section>
+
+    <section class="section-card">
+      <h2 class="section-title">Things I've Made</h2>
+      <div class="products-grid">
+        <div class="product-box">
+          <span class="product-name">Wire sorter</span>
+        </div>
+        <div class="product-box">
+          <span class="product-name">Phone</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with help from AI.</p>
+  </footer>
+
+</body>
+</html>
